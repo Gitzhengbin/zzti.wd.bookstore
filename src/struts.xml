@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"/>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 前台 -->
+		<action name="findAllAddressAction" class="stageListAddressAction"
+			method="findAllAddress">
+			<result name="success">/stage_pages/pages/listaddress.jsp</result>
+		</action>
+		
+		<action name="chooseDishAction" class="stageChooseDishAction"
+			method="findAllDishes">
+			<result name="success">/stage_pages/pages/choosedish.jsp</result>
+		</action>
+		
+		<action name="readyOrderAction" class="stageReadyOrderAction"
+			method="skip">
+			<result name="success">/stage_pages/pages/orderform.jsp</result>
+		</action>
+		
+		<action name="addOrderAction" class="stageAddOrderAction"
+			method="addOrder">
+			<result name="success">/stage_pages/pages/finishorder</result>
+		</action>
+	</package>
+</struts>
