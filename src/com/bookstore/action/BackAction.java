@@ -15,10 +15,15 @@ public class BackAction extends ActionSupport implements ModelDriven<Book>{
 	private List<Book>list;
 	
 	public String addBook(){
+		book.setCover("123.jpg");
 		bookDao.addBook(book);
 		return SUCCESS;
 	}
 	public String updateBook(){
+		System.out.println("执行action "+"-------------------->>");
+		System.out.println(book.getId()+"++++++++++++++++++>>");
+		book.setCover("123.jpg");
+		System.out.println(book.getId()+","+book.getName()+"--------------------->>");
 		bookDao.updateBook(book);
 		return SUCCESS;
 	}

@@ -22,5 +22,8 @@
 		<!-- 要注射进入的参数名与值 -->
 		<property name="bookDao" ref="bookDao"/>
 	</bean>
+	<bean id="stageAction" class="com.bookstore.action.StageAction">
+		<property name="bookDao" ref="bookDao"/>
+	</bean>
 	
 </beans>

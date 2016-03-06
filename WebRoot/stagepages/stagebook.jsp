@@ -1,39 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title></title>
-<link type="text/css" rel="stylesheet" href="../css/reset.css" />
-<link type="text/css" rel="stylesheet" href="../css/1024_768.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:861px) and (max-width:960px)" href="css/pad_heng.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:601px) and (max-width:860px)" href="css/pad.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:481px) and (max-width:600px)" href="css/tel_heng.css" />
-<link type="text/css" rel="stylesheet" media="screen and (max-width:480px)" href="Css/tel.css" />
+<title>书籍前台</title>
+<link type="text/css" rel="stylesheet" href="<c:url value='/css/reset.css'/>" />
+<link type="text/css" rel="stylesheet" href="<c:url value='/css/1024_768.css'/>" />
+<link type="text/css" rel="stylesheet" media="screen and (min-width:861px) and (max-width:960px)" href="<c:url value='/css/pad_heng.css'/>" />
+<link type="text/css" rel="stylesheet" media="screen and (min-width:601px) and (max-width:860px)" href="<c:url value='/css/pad.css'/>" />
+<link type="text/css" rel="stylesheet" media="screen and (min-width:481px) and (max-width:600px)" href="<c:url value='/css/tel_heng.css'/>" />
+<link type="text/css" rel="stylesheet" media="screen and (max-width:480px)" href="<c:url value='/css/tel.css'/>" />
+<link rel="icon" type="image/x-icon" href="<c:url value='/logo/wd.ico'/>" media="screen"/>
 </head>
 
 <body>
 <div class="w_100_l top_title">
 	<div class="main">
-    	<p><a href="#">微店——网上书城基础支持系统</a><a href="#">Read more</a></p>
+    	<p><a href="">卓越131班——郑斌</a>&nbsp;&nbsp;&nbsp;</p>
     </div>
 </div>
+
 
 <div class="w_100_l">
 	<div class="main">
       <div class="top_banner">
-            <div class="top_logo"><img src="../stageimages/top_logo.jpg" alt="A BOOK APART LOGO" /></div>
+            <div class="top_logo"><img src="<c:url value='/logo/logo.png'/>" alt="A BOOK APART LOGO" /></div>
             <div class="top_menu">
             	<ul>
-                	<li class="sel"><a href="#">HOME</a></li>
-                	<li><a href="#">STORE</a></li>
-                	<li><a href="#">PRESS</a></li>
-                	<li><a href="#">ABOUT</a></li>
-                	<li><a href="#">HELP</a></li>
+                	<li class="sel"><a href="#">主页</a></li>
+                	<li><a href="#">更多</a></li>
+                	<li><a href="#">帮助</a></li>
                 </ul>
             </div>
-            <div class="top_shop_cur"><a href="#"><img src="../stageimages/top_shop_cur.jpg" alt="shopping car" /></a></div>
+            <div class="top_shop_cur"><a href="#"><img src="<c:url value='stageimages/top_shop_cur.jpg'/>" alt="shopping car" /></a></div>
         </div>
         <!-- <span class="index_img"><img src="Images/banner_img.jpg" alt="Dan Cederholm" border="0" usemap="#Map" /> -->
         <map name="Map" id="Map">
@@ -42,58 +42,21 @@
         </span>
         <p class="index_hr"></p>
       <div class="content">
-            <h1 class="h1_book_title">Also from A Book Apart</h1>
+            <h1 class="h1_book_title">图书商城</h1>
         	<ul>
+        	<c:forEach var="b" items="${list}">
             	<li>
                 	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_01.jpg" alt="book" /></a></dd>
+                    	<dd><a href="#"><img src="<c:url value='/stageimages/${b.cover}'/>" alt="book" /></a></dd>
                         <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Gift cards</a></p>
-                            <p class="book_inline">$25, $50, and $100</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
+                        	<p class="book_title"><a href="#" target="_blank">${b.name}</a></p>
+                        	<p class="book_inline">${b.author}</p>
+                            <p class="book_inline">￥${b.price}</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">BUY</button>
                         </dt>
                     </dl>
                 </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_02.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Just Enough Research</a></p>
-                            <p class="book_inline">by Erika Hall</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_03.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></p>
-                            <p class="book_inline">by Karen McGrane</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_04.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Design Is a Job</a></p>
-                            <p class="book_inline">by Mike Monteiro</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_05.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Mobile First</a></p>
-                            <p class="book_inline">by Luke Wroblewski</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
+             </c:forEach>
             	<li>
                 	<dl>
                     	<dd><a href="#"><img src="../stageimages/book_06.jpg" alt="book" /></a></dd>
@@ -195,8 +158,9 @@
             </div>
         </div> -->
         <!-- <p class="index_hr"></p> -->
-        <h1 class="news_title">Newsletter</h1>
-        <p class="news_title_1"><span class="span_1">Keep up to date with new book releases and announcements with our newsletter.</span><span class="span_2"><img src="../stageimages/img_inp.jpg" /></span></p>
+        <h1 class="news_title">网上书城基础支持系统</h1>
+        <p class="news_title_1">
+        	<img alt="" src=""><span class="span_1"><a href="https://github.com/Gitzhengbin/zzti.wd.bookstore">GitHub</a></span><span class="span_2" style="margin-bottom: 20px;">© 2016 Bin Zheng</span></p>
         <p class="index_hr" style="margin-top:20px;"></p>
         <!-- <div class="footer">
            <span class="span_1">&copy; Copyright 2014, A Book Apart, LLC</span>&nbsp;&nbsp;

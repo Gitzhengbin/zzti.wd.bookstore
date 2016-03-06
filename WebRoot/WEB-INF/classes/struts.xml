@@ -7,24 +7,22 @@
 	<constant name="struts.i18n.encoding" value="utf-8"/>
 	<package name="default" namespace="/" extends="struts-default">
 		<!-- 前台 -->
-		<action name="findAllAddressAction" class="stageListAddressAction"
-			method="findAllAddress">
-			<result name="success">/stage_pages/pages/listaddress.jsp</result>
+		<action name="stageListBookAction" class="stageAction"
+			method="findAllBook">
+			<result name="success">/stagepages/stagebook.jsp</result>
 		</action>
-		
-		<action name="chooseDishAction" class="stageChooseDishAction"
-			method="findAllDishes">
-			<result name="success">/stage_pages/pages/choosedish.jsp</result>
+		<!-- 后台 -->
+		<action name="addBookAction" class="backAction"
+			method="addBook">
+			<result name="success" type="redirect">/listBookAction</result>
 		</action>
-		
-		<action name="readyOrderAction" class="stageReadyOrderAction"
-			method="skip">
-			<result name="success">/stage_pages/pages/orderform.jsp</result>
+		<action name="listBookAction" class="backAction"
+			method="findAllBook">
+			<result name="success">/backpages/listbook.jsp</result>	
 		</action>
-		
-		<action name="addOrderAction" class="stageAddOrderAction"
-			method="addOrder">
-			<result name="success">/stage_pages/pages/finishorder</result>
+		<action name="updateBookAction" class="backAction"
+			method="updateBook">
+			<result name="success" type="redirect">/listBookAction</result>
 		</action>
 	</package>
 </struts>

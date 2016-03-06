@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>网上书城基础支持系统</title>
-    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/logo/wd.png" media="screen"/>
+    <title>书籍后台</title>
+    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/logo/wd.ico" media="screen"/>
 	<link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/css/dashboard.css'/>" rel="stylesheet">
     <script src="<c:url value='/js/html5shiv.min.js'/>"></script>
@@ -108,15 +108,15 @@
         <div class="col-sm-3 col-md-2 sidebar">
        	 <ul class="nav nav-sidebar">
           <li class="active"><a href="#">快速操作 <span class="sr-only">(current)</span></a></li>
-            <li id="li_1" class="lihref"><a href="#" onclick="javascript:alter_href('Add_Pay_Prove_Servlet?method=list',1);">添加图书信息</a></li>
+            <li id="li_1" class="lihref"><a href="#" onclick="javascript:alter_href('/backpages/addbook.jsp',1);">添加图书信息</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
             <li class="active"><a href="#">信息查看 <span class="sr-only">(current)</span></a></li>
-            <li id="li_4" class="lihref"><a href="#" onclick="javascript:alter_href('List_Pay_Prove_Servlet?method=list',4);">图书列表</a></li>
+            <li id="li_4" class="lihref"><a href="#" onclick="javascript:alter_href('listBookAction.action',4);">图书列表</a></li>
           </ul> 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" style="height:100%;">
-        	<iframe id="iframe" frameborder="no" border="0"  style="height:100%;width:100%;" src="<c:url value='Opreate_Notes_Servlet?method=list'/>"></iframe>
+        	<iframe id="iframe" frameborder="no" border="0"  style="height:100%;width:100%;" src="<c:url value='listBookAction.action'/>"></iframe>
         </div>
       </div>
     </div>
