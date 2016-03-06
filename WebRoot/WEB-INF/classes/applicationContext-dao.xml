@@ -18,17 +18,9 @@
     http://www.springframework.org/schema/util  
     http://www.springframework.org/schema/util/spring-util.xsd"> 
 	
-	<bean id="addressDao" class="com.yuefanba.stage.dao.impl.AddressDaoImpl">
+	<bean id="bookDao" class="com.bookstore.dao.BookDaoImpl">
 		<!-- sessionFactory传给dao中的HibernateDaoSupport -->
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="dishesDao" class="com.yuefanba.stage.dao.impl.DishesDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	
-	<bean id="dishSortDao" class="com.yuefanba.stage.dao.impl.DishSortDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-
 </beans>

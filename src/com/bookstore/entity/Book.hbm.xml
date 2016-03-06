@@ -3,7 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.yuefanba.entity.Address" table="address">
+	<class name="com.bookstore.entity.Book" table="book">
 		<id name="id">
 			<!-- native主键自增长 数据库生成-->
 			<!-- uuid产生唯一值，字符串类型 -->
@@ -13,6 +13,7 @@
 		<property name="cover"/>
 		<property name="name"/>
 		<property name="author"/>
+		<property name="press"/>
 		<property name="isbn"/>
 		<property name="number"/>
 		<property name="price"/>

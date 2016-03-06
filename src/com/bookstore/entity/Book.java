@@ -5,6 +5,7 @@ public class Book {
 	private String cover;
 	private String name;
 	private String author;
+	private String press;
 	private String isbn;
 	private int number;
 	private double price;
@@ -31,6 +32,12 @@ public class Book {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	public String getPress() {
+		return press;
+	}
+	public void setPress(String press) {
+		this.press = press;
 	}
 	public String getIsbn() {
 		return isbn;

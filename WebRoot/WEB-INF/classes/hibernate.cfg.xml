@@ -6,7 +6,7 @@
 	<session-factory>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3307/meal_test?useUnicode=true&amp;characterEncoding=utf8</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3307/bookstore?useUnicode=true&amp;characterEncoding=utf8</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">950906</property>
 		
@@ -15,10 +15,6 @@
 		<!-- ddl数据库定义语言 值为create（只要发布就会重新建表）或update（如果表存在，则在基础之上进行修改）-->
 		<property name="hbm2ddl.auto">update</property>
 		
-		<mapping resource="com/yuefanba/entity/Address.hbm.xml"/>
-		<mapping resource="com/yuefanba/entity/Dishes.hbm.xml"/>
-		<mapping resource="com/yuefanba/entity/DishSort.hbm.xml"/>
-		<mapping resource="com/yuefanba/entity/MealOrder.hbm.xml"/>
-		<mapping resource="com/yuefanba/entity/WeekDish.hbm.xml"/>
+		<mapping resource="com/bookstore/entity/Book.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

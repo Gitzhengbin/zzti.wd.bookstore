@@ -40,7 +40,7 @@
 	
 	<!-- 配置哪些类哪些方法使用事物 -->
 	<aop:config>
-		<aop:pointcut id="allManagerMethod" expression="execution(* com.yuefanba.stage.dao.impl.*.*(..))"/>
+		<aop:pointcut id="allManagerMethod" expression="execution(* com.bookstore.dao.*.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod"/>
 	</aop:config>
 </beans>

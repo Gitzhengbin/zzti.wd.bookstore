@@ -18,18 +18,9 @@
 	    http://www.springframework.org/schema/util  
 	    http://www.springframework.org/schema/util/spring-util.xsd"> 
 	<!-- Action交给Spring创建前，需要配置，配置后执行Struts.xml，所以id属性即访问action的class -->
-	<bean id="stageListAddressAction" class="com.yuefanba.stage.action.ListAddressAction">
+	<bean id="backAction" class="com.bookstore.action.BackAction">
 		<!-- 要注射进入的参数名与值 -->
-		<property name="addressDao" ref="addressDao"/>
+		<property name="bookDao" ref="bookDao"/>
 	</bean>
 	
-	<bean id="stageChooseDishAction" class="com.yuefanba.stage.action.ChooseDishAction">
-		<property name="dishesDao" ref="dishesDao"/>
-		<property name="dishSortDao" ref="dishSortDao"/>
-	</bean>
-	
-	<bean id="stageReadyOrderAction" class="com.yuefanba.stage.action.Ready1OrderAction"/>
-	
-	<bean id="stageAddOrderAction" class="com.yuefanba.stage.action.AddOrderAction"/>
-
 </beans>
