@@ -9,8 +9,8 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>预付款存入凭证</title>
     <link rel="icon" href="<c:url value='/logo/logo.png'/>">
     <script src="<c:url value='/js/jquery.min.js'/>"></script>
@@ -18,7 +18,6 @@
 	<script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/bootstrap.min.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/dashboard.css'/>">
-
     <script src="<c:url value='/js/html5shiv.min.js'/>"></script>
     <script src="<c:url value='/js/respond.js'/>"></script>
     <script>
@@ -92,7 +91,13 @@
         <div class="main" style="height:auto">
           <h2 class="sub-header">添加图书信息</h2>
           <div class="table-responsive">
-			<form id="pay_prove_form" action="<c:url value='addBookAction.action'/>" method="post">
+			<form id="pay_prove_form" action="<c:url value='addBookAction.action'/>" method="post" enctype="multipart/form-data">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">封面</label>
+			    <div class="input-group" style="width:30%">
+			    	<input type="file" name="upload" size="50"/>
+      			</div>
+			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">书名</label>
 			    <div class="input-group" style="width:30%">

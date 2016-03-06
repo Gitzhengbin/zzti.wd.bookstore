@@ -47,7 +47,7 @@
         	<c:forEach var="b" items="${list}">
             	<li>
                 	<dl>
-                    	<dd><a href="#"><img src="<c:url value='/stageimages/${b.cover}'/>" alt="book" /></a></dd>
+                    	<dd><a href="#"><img src="<c:url value='/upload/${b.cover}'/>" alt="book" /></a></dd>
                         <dt>
                         	<p class="book_title"><a href="#" target="_blank">${b.name}</a></p>
                         	<p class="book_inline">${b.author}</p>
@@ -57,76 +57,6 @@
                     </dl>
                 </li>
              </c:forEach>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_06.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Designing for Emotion</a></p>
-                            <p class="book_inline">by Aarron Walter</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_07.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Responsive Web Design</a></p>
-                            <p class="book_inline">by Ethan Marcotte</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_08.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">CSS3 for Web Designers</a></p>
-                            <p class="book_inline">by Dan Cederholm</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_09.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">HTML5 for Web Designers</a></p>
-                            <p class="book_inline">by Jeremy Keith</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_10.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">On Web Typography</a></p>
-                            <p class="book_inline">by Jason Santa Maria</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_11.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Responsible Responsive Design</a></p>
-                            <p class="book_inline">by Scott Jehl</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
-            	<li>
-                	<dl>
-                    	<dd><a href="#"><img src="../stageimages/book_12.jpg" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">On Web Typography</a></p>
-                            <p class="book_inline">by Jason Santa Maria</p>
-                            <a class="book_buy" href="#" target="_blank">BUY</a>
-                        </dt>
-                    </dl>
-                </li>
             </ul>
       </div>
         <p class="index_hr"></p>

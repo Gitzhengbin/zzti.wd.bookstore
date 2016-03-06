@@ -14,6 +14,14 @@
 		<!-- 后台 -->
 		<action name="addBookAction" class="backAction"
 			method="addBook">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions">
+					png,bmp,jpg,doc,xls,gif,rar,zip,war,jar,txt,docx,xlsx,pdf,ppt,mp3,mp4,avi,java,js,class,sql
+				</param>
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<param name="savePath">/upload</param>
 			<result name="success" type="redirect">/listBookAction</result>
 		</action>
 		<action name="listBookAction" class="backAction"
@@ -24,5 +32,22 @@
 			method="updateBook">
 			<result name="success" type="redirect">/listBookAction</result>
 		</action>
+		<action name="deleteBookAction" class="backAction"
+			method="deleteBook">
+			<result name="success" type="redirect">/listBookAction</result>	
+		</action>
+		<!-- 文件上传 -->
+		<!-- <action name="fileUpload" class="action.FileUploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions">
+					png,bmp,jpg,doc,xls,gif,rar,zip,war,jar,txt,docx,xlsx,pdf,ppt,mp3,mp4,avi,java,js,class,sql
+				</param>
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">/upload.jsp</result>
+			<param name="savePath">/upload</param>
+			<result name="success">/showupload.jsp</result>			
+		</action> -->
 	</package>
 </struts>

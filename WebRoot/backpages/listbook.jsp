@@ -65,7 +65,7 @@ response.setDateHeader("Expires",0);
 						<div class="row">
 						  <div class="col-xs-6 col-md-3">
 						    <a href="#" class="thumbnail">
-						      <img src="<c:url value='/stageimages/book_02.jpg'/>" alt="...">
+						      <img src="<c:url value='//'/>" alt="...">
 						    </a>
 						  </div>
 						</div>
@@ -156,7 +156,7 @@ response.setDateHeader("Expires",0);
 									<td id="list_price_${a.id}">${a.price}</td>
 									<td>
 										<button type="button" class="btn btn-primary btn-xs" onclick="updateF(${a.id});" data-toggle="modal" data-target="#add_update_Modal">修改</button>
-										&nbsp;&nbsp;<button type="button" class="btn btn-primary btn-danger btn-xs" onclick="deleteCus()">删除</button>
+										&nbsp;&nbsp;<button type="button" class="btn btn-primary btn-danger btn-xs" onclick="location='deleteBookAction.action?id=${a.id}'">删除</button>
 									</td>
 								</tr>
 							</c:forEach>
