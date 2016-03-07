@@ -3,9 +3,9 @@
 
 数据库：CREATE DATABASE bookstore;
 
-字段列表
+	字段列表
 		id			int 		id
-		封面图 	        	varchar 	cover
+		封面图                  varchar         cover
 		书名			varchar 	name
 		作者			varchar		author
 		出版社	        	varchar		press
