@@ -112,11 +112,11 @@
           </ul>
 		  <ul class="nav nav-sidebar">
             <li class="active"><a href="#">信息查看 <span class="sr-only">(current)</span></a></li>
-            <li id="li_4" class="lihref"><a href="#" onclick="javascript:alter_href('listBookAction.action',4);">图书列表</a></li>
+            <li id="li_4" class="lihref"><a href="#" onclick="javascript:alter_href('manage.action',4);">图书列表</a></li>
           </ul> 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" style="height:100%;">
-        	<iframe id="iframe" frameborder="no" border="0"  style="height:100%;width:100%;" src="<c:url value='listBookAction.action'/>"></iframe>
+        	<iframe id="iframe" frameborder="no" border="0"  style="height:100%;width:100%;" src="<c:url value='manage.action'/>"></iframe>
         </div>
       </div>
     </div>

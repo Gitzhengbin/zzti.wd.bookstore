@@ -7,7 +7,7 @@
 	<constant name="struts.i18n.encoding" value="utf-8"/>
 	<package name="default" namespace="/" extends="struts-default">
 		<!-- 前台 -->
-		<action name="stageListBookAction" class="stageAction"
+		<action name="book" class="stageAction"
 			method="findAllBook">
 			<result name="success">/stagepages/stagebook.jsp</result>
 		</action>
@@ -22,19 +22,20 @@
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"/>
 			<param name="savePath">/upload</param>
-			<result name="success" type="redirect">/listBookAction</result>
+			<result name="success" type="redirect">/manage</result>
 		</action>
-		<action name="listBookAction" class="backAction"
+		<action name="manage" class="backAction"
 			method="findAllBook">
 			<result name="success">/backpages/listbook.jsp</result>	
 		</action>
 		<action name="updateBookAction" class="backAction"
 			method="updateBook">
-			<result name="success" type="redirect">/listBookAction</result>
+			<result name="success" type="redirect">/manage</result>
 		</action>
 		<action name="deleteBookAction" class="backAction"
 			method="deleteBook">
-			<result name="success" type="redirect">/listBookAction</result>	
+			<param name="savePath">/upload</param>
+			<result name="success" type="redirect">/manage</result>	
 		</action>
 		<!-- 文件上传 -->
 		<!-- <action name="fileUpload" class="action.FileUploadAction">

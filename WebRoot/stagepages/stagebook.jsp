@@ -26,13 +26,6 @@
 	<div class="main">
       <div class="top_banner">
             <div class="top_logo"><img src="<c:url value='/logo/logo.png'/>" alt="A BOOK APART LOGO" /></div>
-            <div class="top_menu">
-            	<ul>
-                	<li class="sel"><a href="#">主页</a></li>
-                	<li><a href="#">更多</a></li>
-                	<li><a href="#">帮助</a></li>
-                </ul>
-            </div>
             <div class="top_shop_cur"><a href="#"><img src="<c:url value='stageimages/top_shop_cur.jpg'/>" alt="shopping car" /></a></div>
         </div>
         <!-- <span class="index_img"><img src="Images/banner_img.jpg" alt="Dan Cederholm" border="0" usemap="#Map" /> -->
@@ -45,14 +38,15 @@
             <h1 class="h1_book_title">图书商城</h1>
         	<ul>
         	<c:forEach var="b" items="${list}">
-            	<li>
+            	<li style="width:30%">
                 	<dl>
                     	<dd><a href="#"><img src="<c:url value='/upload/${b.cover}'/>" alt="book" /></a></dd>
-                        <dt>
+                        <dt style="margin-left: 10px;">
                         	<p class="book_title"><a href="#" target="_blank">${b.name}</a></p>
-                        	<p class="book_inline">${b.author}</p>
-                            <p class="book_inline">￥${b.price}</p>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">BUY</button>
+                        	<p class="book_inline" style="margin-bottom: 0px;">${b.author}</p>
+                            <p class="book_inline" style="margin-bottom: 0px; color:red">￥${b.price}</p>
+                        	<p class="book_inline">${b.press}</p>
+                            <a class="book_buy" href="#" target="_blank">BUY</a>
                         </dt>
                     </dl>
                 </li>

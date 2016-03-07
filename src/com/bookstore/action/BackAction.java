@@ -46,13 +46,20 @@ public class BackAction extends ActionSupport implements ModelDriven<Book>{
 		return SUCCESS;
 	}
 	public String updateBook(){
-		book.setCover("123.jpg");
 		bookDao.updateBook(book);
 		return SUCCESS;
 	}
 	public String deleteBook(){
-		bookDao.deleteBook(book.getId());
-		return SUCCESS;
+		String name = book.getCover();
+		System.out.println(name);
+		String dstPath = ServletActionContext.getServletContext().getRealPath(this.getSavePath())+"//"+name;
+		System.out.println(dstPath);
+		if(deleteFile(dstPath)){
+			bookDao.deleteBook(book.getId());
+			return SUCCESS;
+		}else{
+			return ERROR;
+		}
 	}
 	public String findAllBook(){
 		list = bookDao.selectBook();
@@ -89,6 +96,17 @@ public class BackAction extends ActionSupport implements ModelDriven<Book>{
 			}
 		}
 	}
+	
+	private static boolean deleteFile(String sPath) {  
+	    boolean flag = false;  
+	    File file = new File(sPath);  
+	    // 路径为文件且不为空则进行删除  
+	    if (file.isFile() && file.exists()) {  
+	        file.delete();  
+	        flag = true;  
+	    }  
+	    return flag;  
+	}  
 	
 	
 	public Book getBook() {

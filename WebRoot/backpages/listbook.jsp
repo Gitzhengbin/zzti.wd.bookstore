@@ -20,7 +20,7 @@ response.setDateHeader("Expires",0);
 <script src="<c:url value='/js/jquery.min.js'/>"></script>
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 <script type="text/javascript">
-	function updateF(id){
+	function updateF(id,cover){
 		$("#update_id").val(id);
 		$("#update_name").val($("#list_name_"+id).text());
 		$("#update_author").val($("#list_author_"+id).text());
@@ -28,6 +28,7 @@ response.setDateHeader("Expires",0);
 		$("#update_isbn").val($("#list_isbn_"+id).text());
 		$("#update_number").val($("#list_number_"+id).text());
 		$("#update_price").val($("#list_price_"+id).text());
+		$("#update_cover").attr("src","upload/"+cover);
 	}
 	function updateFrom(){
 		var ac = true;
@@ -47,9 +48,29 @@ response.setDateHeader("Expires",0);
 			$("#updateBookForm").submit();
 		}
 	}
+	function deleteF(href){
+		alert(href);
+		$("#deleteBookButton").attr("onclick","location='"+href+"'");
+	}
 </script>
 </head>
 <body style="padding:0px;background:#f1f2f3 url(<%=request.getContextPath()%>/back_pic/back_pic.jpg);height:auto">
+<!-- 删除 -->
+   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="delete_small_ModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    	<div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="delete_ModalLabel">删除确认</h4>
+	    </div>
+       <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button id="deleteBookButton" type="button" class="btn btn-primary" onclick="">删除</button>
+	   </div>
+    </div>
+  </div>
+</div>
+
 	<div class="modal fade" id="add_update_Modal" tabindex="-1"
 		role="dialog" aria-labelledby="exampleModalLabel" align="left">
 		<div class="modal-dialog" role="document">
@@ -65,7 +86,7 @@ response.setDateHeader("Expires",0);
 						<div class="row">
 						  <div class="col-xs-6 col-md-3">
 						    <a href="#" class="thumbnail">
-						      <img src="<c:url value='//'/>" alt="...">
+						      <img id="update_cover" src="">
 						    </a>
 						  </div>
 						</div>
@@ -155,8 +176,8 @@ response.setDateHeader("Expires",0);
 									<td id="list_number_${a.id}">${a.number}</td>
 									<td id="list_price_${a.id}">${a.price}</td>
 									<td>
-										<button type="button" class="btn btn-primary btn-xs" onclick="updateF(${a.id});" data-toggle="modal" data-target="#add_update_Modal">修改</button>
-										&nbsp;&nbsp;<button type="button" class="btn btn-primary btn-danger btn-xs" onclick="location='deleteBookAction.action?id=${a.id}'">删除</button>
+										<button type="button" class="btn btn-primary btn-xs" onclick="updateF(${a.id},'${a.cover}');" data-toggle="modal" data-target="#add_update_Modal">修改</button>
+										&nbsp;&nbsp;<button type="button" data-toggle="modal" data-target="#delete_small_ModalLabel" class="btn btn-primary btn-danger btn-xs" onclick="deleteF('deleteBookAction.action?id=${a.id}&cover=${a.cover}')">删除</button>
 									</td>
 								</tr>
 							</c:forEach>

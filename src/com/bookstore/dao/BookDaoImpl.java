@@ -22,6 +22,6 @@ public class BookDaoImpl extends HibernateDaoSupport implements BookDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Book> selectBook() {
-		return getHibernateTemplate().find("from Book");
+		return getHibernateTemplate().find("from Book book order by book.id desc");
 	}
 }
