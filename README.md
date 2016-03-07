@@ -4,14 +4,14 @@
 数据库：CREATE DATABASE bookstore;
 
 字段列表
-			id			int 		id
-			封面图 		varchar 	cover
-			书名			varchar 	name
-			作者			varchar		author
-			出版社		varchar		press
-			ISBN号码		varchar		isbn
-			页数			int			number
-			价格			double		price
+		id			int 		id
+		封面图 	        	varchar 	cover
+		书名			varchar 	name
+		作者			varchar		author
+		出版社	        	varchar		press
+		ISBN号码		varchar		isbn
+		页数			int		number
+		价格			double		price
 
 GitHub:https://github.com/Gitzhengbin/zzti.wd.bookstore
 
